@@ -1,5 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
+
 from app.models.keyword import Keyword
 from app.schemas.keyword import KeywordCreate
 

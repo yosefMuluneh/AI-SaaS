@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+
 from app.api.v1.endpoints import keywords, workspaces
 
 api_router = APIRouter()
