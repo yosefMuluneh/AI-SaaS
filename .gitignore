@@ -1,0 +1,54 @@
+# ==========================================
+# General / OS & IDE Files
+# ==========================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+*.swp
+*.swo
+
+# ==========================================
+# Environment Variables & Secrets
+# ==========================================
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# ==========================================
+# Backend (Python / FastAPI / Celery)
+# ==========================================
+backend/venv/
+backend/env/
+backend/__pycache__/
+*.py[cod]
+*$py.class
+backend/*.sqlite3
+backend/instance/
+.pytest_cache/
+.mypy_cache/
+celerybeat-schedule
+*.pid
+
+# ==========================================
+# Frontend (Next.js / Node.js / pnpm)
+# ==========================================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/.turbo/
+.pnpm-store/
+.pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==========================================
+# Docker & Local Database Storage
+# ==========================================
+postgres_data/
