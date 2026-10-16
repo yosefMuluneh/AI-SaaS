@@ -1,12 +1,14 @@
 from fastapi import FastAPI
+from app.api.v1.api import api_router
+from app.core.config import settings
 
-app = FastAPI(
-    title="AI-SaaS Competitor Intelligence API",
-    version="1.0.0",
-    description="Backend API powering multi-tenant competitor research and agentic content generation.",
-)
+import app.models
+
+app = FastAPI(title=settings.PROJECT_NAME)
+
+app.include_router(api_router, prefix="/api/v1")
 
 
 @app.get("/")
-def health_check():
-    return {"status": "healthy", "service": "FastAPI Backend is running"}
+async def root():
+    return {"message": "Welcome to AI-SaaS Competitor Intelligence Engine API"}
