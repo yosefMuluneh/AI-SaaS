@@ -64,11 +64,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install Frontend Dependencies
-        run: |
-          cd frontend
-          pnpm install
+        run: pnpm --filter frontend install
 
       - name: Run Next.js Build Check
-        run: |
-          cd frontend
-          pnpm build
+        run: pnpm --filter frontend build
