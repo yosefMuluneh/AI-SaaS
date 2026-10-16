@@ -1,0 +1,3 @@
+[lint]
+# Ignore B008 to allow FastAPI's Depends() function calls in function parameter defaults
+ignore = ["B008"]
