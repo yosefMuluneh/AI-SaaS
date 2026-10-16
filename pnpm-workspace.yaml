@@ -3,3 +3,6 @@ packages:
 
 minimumReleaseAge: 0
 trustLockfile: true
+
+allowBuilds:
+  unrs-resolver: true
