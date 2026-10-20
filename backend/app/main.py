@@ -1,14 +1,31 @@
 from fastapi import FastAPI
-
-import app.models
+from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1.api import api_router
 from app.core.config import settings
 
-app = FastAPI(title=settings.PROJECT_NAME)
+app = FastAPI(
+    title=settings.PROJECT_NAME,
+    version="1.0.0",
+)
 
+# Configure CORS for Next.js frontend
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Include API router
 app.include_router(api_router, prefix="/api/v1")
 
 
 @app.get("/")
-async def root():
-    return {"message": "Welcome to AI-SaaS Competitor Intelligence Engine API"}
+def root():
+    return {"message": "AI SaaS Competitive Intelligence API is running."}
