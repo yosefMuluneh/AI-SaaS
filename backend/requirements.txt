@@ -16,3 +16,4 @@ python-slugify
 requests
 alembic
 ruff
+psycopg[binary]

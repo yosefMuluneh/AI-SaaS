@@ -26,7 +26,8 @@ if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
 # Override the sqlalchemy.url config with our Pydantic settings database URL
-config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
+db_url = settings.DATABASE_URL.replace("%", "%%")
+config.set_main_option("sqlalchemy.url", db_url)
 
 target_metadata = Base.metadata
 

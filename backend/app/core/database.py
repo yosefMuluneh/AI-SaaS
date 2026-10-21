@@ -14,7 +14,9 @@ AsyncSessionLocal = async_sessionmaker(
 
 # Synchronous Engine & Session (for Celery Background Tasks)
 # Converts postgresql+asyncpg:// to postgresql:// or postgresql+psycopg2://
-sync_db_url = settings.DATABASE_URL.replace("postgresql+asyncpg://", "postgresql://")
+sync_db_url = settings.DATABASE_URL.replace(
+    "postgresql+asyncpg://", "postgresql+psycopg2://"
+)
 sync_engine = create_engine(sync_db_url, pool_pre_ping=True)
 SyncSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=sync_engine)
 
