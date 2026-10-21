@@ -26,3 +26,8 @@ async def create_keyword(db: AsyncSession, obj_in: KeywordCreate) -> Keyword:
     await db.commit()
     await db.refresh(db_obj)
     return db_obj
+
+
+async def get_keyword(db: AsyncSession, keyword_id: int) -> Keyword | None:
+    result = await db.execute(select(Keyword).where(Keyword.id == keyword_id))
+    return result.scalars().first()

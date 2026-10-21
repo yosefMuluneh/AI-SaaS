@@ -14,6 +14,7 @@ from app.models.base import Base
 from app.models.campaign import GeneratedCampaign  # noqa: F401
 from app.models.competitor import CompetitorData  # noqa: F401
 from app.models.keyword import Keyword  # noqa: F401
+from app.models.user import User  # noqa: F401
 from app.models.workspace import Workspace  # noqa: F401
 
 # this is the Alembic Config object, which provides

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import JSON, DateTime, ForeignKey, String, Text
+from sqlalchemy import DateTime, ForeignKey, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models.base import Base
@@ -17,8 +17,8 @@ class GeneratedCampaign(Base):
         ForeignKey("keywords.id", ondelete="SET NULL"), nullable=True, index=True
     )
 
-    prompt_used: Mapped[str] = mapped_column(Text, nullable=False)
-    structured_output: Mapped[dict | None] = mapped_column(JSON, nullable=True)
+    title: Mapped[str] = mapped_column(String(255), nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
     status: Mapped[str] = mapped_column(String(50), default="pending", nullable=False)
     error_message: Mapped[str | None] = mapped_column(Text, nullable=True)
 
