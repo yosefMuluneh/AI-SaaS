@@ -1,4 +1,5 @@
 import time
+
 from app.core.database import SyncSessionLocal
 from app.models.campaign import GeneratedCampaign
 from app.models.keyword import Keyword
@@ -60,6 +61,6 @@ def run_competitor_analysis(
     except Exception as e:
         db.rollback()
         print(f"[AI Agent Error] Failed to persist campaign: {e}")
-        raise e
+        raise
     finally:
         db.close()
