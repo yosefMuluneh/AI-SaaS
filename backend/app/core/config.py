@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = (
         "postgresql+asyncpg://postgres:postgrespassword@localhost:5433/aisaas_db"
     )
-    REDIS_URL: str = "redis://default:gQAAAAAAAkhxAAIgcDEwNmUxMDljOTEzYWM0ZWNhOThiZjQwYWQ1ZmY1Mjg4Nw@master-hermit-149617.upstash.io:6379"
+    REDIS_URL: str = "rediss://default:gQAAAAAAAkhxAAIgcDEwNmUxMDljOTEzYWM0ZWNhOThiZjQwYWQ1ZmY1Mjg4Nw@master-hermit-149617.upstash.io:6379"
 
     SECRET_KEY: str = "super-secret-jwt-key-change-in-production-12345"
     ALGORITHM: str = "HS256"
