@@ -54,8 +54,8 @@ async def login(
         key="access_token",
         value=access_token,
         httponly=True,
-        secure=False,  # Set to True in production with HTTPS
-        samesite="lax",
+        secure=True,  # Set to True in production with HTTPS
+        samesite="none",
         max_age=86400,
     )
     return user
